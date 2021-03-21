@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ list }) {
+export default function Search() {
   const [searchText, setSearchText] = useState("");
   const [movieList, setMovieList] = useState([]);
 
