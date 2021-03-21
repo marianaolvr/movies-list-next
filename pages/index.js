@@ -26,6 +26,8 @@ export default function Home({ list }) {
           ))}
         </ul>
 
+        <Link href="/about">Sobre nós</Link>
+
       </main>
     </div>
   );
