@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({name}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,13 +11,24 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Olá, mundo!
+          Filmes em destaque
         </h1>
-      </main>
 
-      <footer className={styles.footer}>
-        Footer aqui
-      </footer>
+        meu nome é {name}
+
+      </main>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+
+  const res = await fetch('http://localhost:3000/api/hello')
+  const json = await res.json();
+
+  return {
+    props: {
+      name: json.name
+    }
+  }
 }
